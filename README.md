@@ -1,4 +1,4 @@
-# Dashboard Produzione — OROGEL
+# Dashboard Produzione - OROGEL
 
 Dashboard interattiva (Plotly Dash) per analizzare produzione agricola simulata con meteo e pH del suolo su diverse basi di analisi (giornaliera, mensile, bimestrale, semestrale, annuale).
 
