@@ -1,31 +1,36 @@
-# DashboardSimulator-Orogel
-Questo progetto simula dati ambientali e produttivi e li visualizza attraverso una dashboard interattiva.
+# Dashboard Produzione — OROGEL
 
-Struttura del Progetto:  
-DashboardOrogel-Simulator.py: Punto di ingresso per avviare la simulazione, contenente la logica di simulazione di generazione dati.  
-riepilogo_2020_2025_Tutte_le_colture.csv: File di output generato dal simulatore dall'anno default all'anno selezionato.  
-requirements.txt: Elenco delle dipendenze Python.  
-Prerequisiti  
-Testato e funzionante su Python 3.13.0
-Installazione
-Clona il repository o scarica i file in una cartella locale.
-Crea e attiva un ambiente virtuale (consigliato):  
-python -m venv venv  
-# Su Windows  
-.\venv\Scripts\activate  
-# Su macOS/Linux  
-source venv/bin/activate  
-Installa tutte le dipendenze necessarie:  
-pip install -r requirements.txt  
-Utilizzo  
-Per utilizzare l'applicazione, segui questi due passaggi:  
+Dashboard interattiva (Plotly Dash) per analizzare produzione agricola simulata con meteo e pH del suolo su diverse basi di analisi (giornaliera, mensile, bimestrale, semestrale, annuale).
 
-Esegui il simulatore per generare il file di dati:
+## Funzionalità
+- 3 colture analizzate: **Pisello, Spinacio, Fagiolino** (+ *Tutte le colture*).
+- Generazione **deterministica** dei dati per anno+coltura → i totali tornano sempre.
+- Meteo e pH suolo giornalieri/mensili, aggregazioni mensili/bimestrali/semestrali, correlazioni (Pearson).
+- **Storico (2020–2025)** per quantità annue con resoconto.
+- Export CSV di tutti i riepiloghi.
+- UI con loghi, stile personalizzato in `assets/style.css`.
 
-python main.py
-Questo creerà il file simulated_vineyard_data.csv nella stessa cartella.
+## Requisiti
+- Python 3.9+ consigliato
+- Librerie: vedi `requirements.txt`
 
-Avvia la dashboard per visualizzare i dati:
+## Installazione
+```bash
+git clone https://github.com/<tuo-utente>/orogel-dashboard.git
+cd orogel-dashboard
+python -m venv .venv
+# per Windows:
+.venv\Scripts\activate
+# per macOS/Linux:
+source .venv/bin/activate
+```
+- installa tutte le dipendenze necessarie:
+```bash
+pip install -r requirements.txt
+```
+## Avvio
+```bash
+python DashboardOrogel-Sim.py
+```
+Automaticamente si aprirà la dashboard all'indirizzo: http://127.0.0.1:/8050/
 
-python dashboard.py
-Apri il browser e vai all'indirizzo http://127.0.0.1:8050/ per vedere la dashboard.
